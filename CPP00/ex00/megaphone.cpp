@@ -21,5 +21,5 @@ int main(int ac, char **av)
 		for (int j = -1; av[i][++j];)
 			std::cout << (char)toupper(av[i][j]);
 	}
-	std::cout << "\n";
+	std::cout << std::endl;
 }
