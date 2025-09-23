@@ -1,5 +1,11 @@
+#ifndef CONTACT
+# define CONTACT
+
 #pragma once
-#include "Phonebook.hpp"
+#include <string>
+#include <iostream>
+#include <cstdio>
+#include <cctype>
 
 class Contact 
 {
@@ -12,14 +18,17 @@ private:
 public:
 	Contact();
 	~Contact();
-	void		setFirstName(std::string str);
 	std::string	getFirstName();
-	void		setLastName(std::string str);
 	std::string	getLastName();
-	void		setNickname(std::string str);
 	std::string	getNickname();
-	void		setPhoneNumber(std::string str);
 	std::string	getPhoneNumber();
-	void		setDarkSecret(std::string str);
 	std::string	getDarkSecret();
+	void		setFirstName(std::string str);
+	void		setLastName(std::string str);
+	void		setNickname(std::string str);
+	void		setPhoneNumber(std::string str);
+	void		setDarkSecret(std::string str);
+	void		print_contact();
 };
+
+#endif
