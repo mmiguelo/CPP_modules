@@ -1,9 +1,9 @@
 NAME = Zombie
 
-SRC 	 = src/newZombie.cpp
+SRC 	 = src/main.cpp
 SRC		+= src/Zombie.cpp
-SRC		+= src/randomChump.cpp
-SRC		+= src/main.cpp
+SRC		+= src/zombieHorde.cpp
+
 
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
