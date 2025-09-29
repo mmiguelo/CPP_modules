@@ -1,9 +1,7 @@
 NAME = Sed_is_for_losers
 
 SRC 	 = src/main.cpp
-SRC		+= src/HumanA.cpp
-SRC		+= src/HumanB.cpp
-SRC		+= src/Weapon.cpp
+SRC		+= src/sed.cpp
 
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
