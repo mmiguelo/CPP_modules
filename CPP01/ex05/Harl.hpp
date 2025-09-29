@@ -2,7 +2,6 @@
 
 #include <iostream>
 #include <string>
-#include <fstream>
 #include <cstdlib>
 
 #define RST "\033[0m"      // reset color
