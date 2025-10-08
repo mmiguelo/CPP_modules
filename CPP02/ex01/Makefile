@@ -1,7 +1,7 @@
 NAME = fixed01
 
 SRC 	 = src/main.cpp
-SRC		+= src/
+SRC		+= src/Fixed.cpp
 
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
