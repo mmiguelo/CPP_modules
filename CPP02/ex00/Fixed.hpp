@@ -1,9 +1,5 @@
 #pragma once
-
 #include <iostream>
-#include <string>
-#include <map>
-#include <cstdlib>
 
 #define RST "\033[0m"      // reset color
 #define R "\033[1;31m"   // bold red
@@ -17,9 +13,9 @@ private:
 public:
 	Fixed();
 	Fixed(const Fixed &src);
+	Fixed& operator= (const Fixed &src);
 	~Fixed();
 
 	int getRawBits() const;
 	void setRawBits(int const raw);
-	Fixed& operator = (const Fixed &src);
 };
