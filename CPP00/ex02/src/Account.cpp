@@ -90,7 +90,7 @@ bool    Account::makeWithdrawal( int withdrawal )
 	}
 
 	this->_amount -= withdrawal;
-	this->_totalNbWithdrawals++;
+	this->_nbWithdrawals++;
 
 	_totalAmount -=withdrawal;
 	this->_totalNbWithdrawals++;
