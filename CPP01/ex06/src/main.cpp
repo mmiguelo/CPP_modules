@@ -4,7 +4,7 @@ int main(int ac, char **av)
 {
 	if (ac != 2)
 	{
-		std::cerr << R << "Error: bad arguments" << RST << std::endl;
+		std::cerr << R << "Error: bad arguments" << "\n" << "Usage: [Executable] [Level]" << RST << std::endl;
 		return 1;
 	}
 	Harl maleKaren;
