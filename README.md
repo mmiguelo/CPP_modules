@@ -107,9 +107,9 @@ This repository contains my solutions to the 42 C++ modules (00 to 04). Each fil
 ## 🧰 Module 08 — Containers & STL
 | File                | Concept                                  |
 |---------------------|------------------------------------------|
-| ex00                | Templates with custom classes, generic algorithms      |
+| ex00                | Templates with custom classes, STL algorithms      |
 | ex01                | Templated container with iterators, add/shortest/longest span |
-| ex02                | Advanced template manipulation, custom stack-like container
+| ex02                | Extend STL containers and make a stack iterable
 
 ---
 
