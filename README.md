@@ -18,6 +18,7 @@ This repository contains my solutions to the 42 C++ modules (00 to 04). Each fil
 |-------------------|---------------------------------------------------------------------------------|
 | ex00              | Command-line arguments, basic output                                            |
 | ex01              | Classes, private attributes, basic I/O, std::setw, string truncation            |
+| ex01              | Basic class design, encapsulation, member functions, scope, object lifetime     |
 
 </details>
 
@@ -39,11 +40,12 @@ This repository contains my solutions to the 42 C++ modules (00 to 04). Each fil
 <details>
 <summary> 🧠 Module 02 — OOP and Ad-hoc Polymorphism</summary><br>
   
-| File                  | Concept                                             |
-|-----------------------|-----------------------------------------------------|
-| ex00                  | Orthodox Canonical Form, fixed-point arithmetic     |
-| ex01                  | Copy constructor, assignment operator               |
-| ex02                  | Roundf, operator overloading, static polymorphism   |
+| File                  | Concept                                                           |
+|-----------------------|-------------------------------------------------------------------|
+| ex00                  | Orthodox Canonical Form, fixed-point arithmetic                   |
+| ex01                  | Copy constructor, assignment operator                             |
+| ex02                  | Roundf, operator overloading, static polymorphism                 |
+| ex03                  | Inheritance, polymorphism, virtual destructors, dynamic dispatch  |
 
 </details>
 
@@ -75,47 +77,48 @@ This repository contains my solutions to the 42 C++ modules (00 to 04). Each fil
 <summary> Next Modules Coming Soon (here is a preview)</summary><br>
 
 ## 🛠 Module 05 — Exceptions
-| File               | Concept                            |
-|--------------------|------------------------------------|
-| ex00               | Exceptions, custom error handling  |
-| ex01               |
-| ex02               |
+| File               | Concept                                                       |
+|--------------------|---------------------------------------------------------------|
+| ex00               | Bureaucrat class, exceptions, range validation with try/catch |
+| ex01               | Form class, nested exceptions, interaction between classes
+| ex02               | Polymorphic forms, exception hierarchy, execution permissions
+| ex03               | Intern class, factory method pattern, dynamic form creation
 
 ---
 
 ## ⚙️ Module 06 — Casting
 | File                  | Concept                                |
 |-----------------------|----------------------------------------|
-| ex00                  | Dynamic casting, type identification   |
-| ex01                  |
-| ex02                  |
+| ex00                | Static casting, type conversion between base and derived             |
+| ex01                | Dynamic casting, runtime type identification (RTTI)                |
+| ex02                | Base class pointer identification using dynamic_cast
 
 ---
 
 ## 🎲 Module 07 — Templates
 | File                | Concept                        |
 |---------------------|--------------------------------|
-| ex00                | Function templates             |
-| ex01                | Class templates                |
-| ex02                |
+| ex00                | Function templates, generic programming basics             |
+| ex01                | Class templates, template parameters |
+| ex02                | Template specialization, iterators, and generic containers
 
 ---
 
 ## 🧰 Module 08 — Containers & STL
 | File                | Concept                                  |
 |---------------------|------------------------------------------|
-| ex00                | Template functions with containers       |
-| ex01                | Efficient container algorithms and logic |
-| ex02                |
+| ex00                | Templates with custom classes, generic algorithms      |
+| ex01                | Templated container with iterators, add/shortest/longest span |
+| ex02                | Advanced template manipulation, custom stack-like container
 
 ---
 
 ## 📈 Module 09 — MutantStack & Inheritance from STL
 | File                | Concept                                   |
 |---------------------|-------------------------------------------|
-| ex00                | Inheriting from standard containers       |
-| ex01                | Iterators with custom stack class         |
-| ex02                |
+| ex00                | Parse files, handle errors, and use std::map for date-based lookups.       |
+| ex01                | Stack operations, expression parsing, and error handling.        |
+| ex02                | Advanced sorting algorithms and performance comparison using STL containers.
 
 </details>
 
