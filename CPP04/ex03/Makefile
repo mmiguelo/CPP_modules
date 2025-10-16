@@ -1,10 +1,12 @@
 NAME = materia
 
-SRC 	 = src/main.cpp
-SRC		+= src/AMateria.cpp
+SRC		 = src/AMateria.cpp
 SRC		+= src/Character.cpp
 SRC		+= src/Cure.cpp
 SRC		+= src/Ice.cpp
+SRC		+= src/ICharacter.cpp
+SRC		+= src/IMateriaSource.cpp
+SRC		+= src/main.cpp
 SRC		+= src/MateriaSource.cpp
 
 CXX = c++
