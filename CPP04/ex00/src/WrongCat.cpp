@@ -1,4 +1,5 @@
 #include "../WrongCat.hpp"
+#include "../WrongAnimal.hpp"
 
 WrongCat::WrongCat() : WrongAnimal()
 {

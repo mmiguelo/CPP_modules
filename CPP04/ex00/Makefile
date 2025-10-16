@@ -4,6 +4,8 @@ SRC 	 = src/main.cpp
 SRC		+= src/Animal.cpp
 SRC		+= src/Dog.cpp
 SRC		+= src/Cat.cpp
+SRC		+= src/WrongAnimal.cpp
+SRC		+= src/WrongCat.cpp
 
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
