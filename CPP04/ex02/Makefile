@@ -1,6 +1,12 @@
-NAME = DiamondTrap
+NAME = Abstract
 
 SRC 	 = src/main.cpp
+SRC		+= src/AAnimal.cpp
+SRC		+= src/Dog.cpp
+SRC		+= src/Cat.cpp
+SRC		+= src/WrongAnimal.cpp
+SRC		+= src/WrongCat.cpp
+SRC		+= src/Brain.cpp
 
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
