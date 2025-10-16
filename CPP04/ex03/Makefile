@@ -1,6 +1,11 @@
-NAME = DiamondTrap
+NAME = materia
 
 SRC 	 = src/main.cpp
+SRC		+= src/AMateria.cpp
+SRC		+= src/Character.cpp
+SRC		+= src/Cure.cpp
+SRC		+= src/Ice.cpp
+SRC		+= src/MateriaSource.cpp
 
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
