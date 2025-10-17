@@ -1,5 +1,4 @@
 #include "AMateria.hpp"
-#include <string>
 
 class ICharacter
 {
