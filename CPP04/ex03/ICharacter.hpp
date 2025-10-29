@@ -1,3 +1,5 @@
+#pragma once
+
 #include "AMateria.hpp"
 
 class ICharacter
