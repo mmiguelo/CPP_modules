@@ -14,10 +14,10 @@
 class Character : public ICharacter
 {
 	private:
-		std::string name;
+		std::string _name;
 		AMateria* inventory[4];
 		AMateria* droped[100];
-
+		int _droped_count;
 
 	public:
 		Character();
