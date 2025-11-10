@@ -1,8 +1,10 @@
 #pragma once
 
-#include "Character.hpp"
 #include <iostream>
 #include <string>
+
+
+class ICharacter;
 
 #define R		"\033[0;31m" //RED
 #define G		"\033[0;32m" //GREEN

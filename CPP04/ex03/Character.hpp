@@ -1,7 +1,7 @@
 #pragma once
 
-#include "AMateria.hpp"
 #include "ICharacter.hpp"
+#include "AMateria.hpp"
 #include <iostream>
 #include <string>
 

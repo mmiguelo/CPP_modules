@@ -1,18 +1,19 @@
 #include "../Cure.hpp"
+#include "../ICharacter.hpp"
 
-Cure::Cure() : AMateria("Cure")
+Cure::Cure() : AMateria("cure")
 {
-	std::cout << B << "Cure: Default constructor called" << RST << std::endl;
+	std::cout << G << "Cure: Default constructor called" << RST << std::endl;
 }
 
 Cure::Cure(const Cure &other) : AMateria(other)
 {
-	std::cout << B << "Cure: Copy constructor called" << RST << std::endl;
+	std::cout << G << "Cure: Copy constructor called" << RST << std::endl;
 }
 
 Cure &Cure::operator=(const Cure &other)
 {
-	std::cout << B << "Cure: Copy assignment operator called" << RST << std::endl;
+	std::cout << G << "Cure: Copy assignment operator called" << RST << std::endl;
 	if (this != &other)
 		this->type = other.type;
 	return *this;
@@ -20,7 +21,7 @@ Cure &Cure::operator=(const Cure &other)
 
 Cure::~Cure()
 {
-	std::cout << B << "Cure: Destructor called" << RST << std::endl;
+	std::cout << R << "Cure: Destructor called" << RST << std::endl;
 }
 
 Cure* Cure::clone() const

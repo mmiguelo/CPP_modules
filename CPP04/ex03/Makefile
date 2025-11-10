@@ -1,16 +1,14 @@
 NAME = materia
 
-SRC		 = src/AMateria.cpp
-SRC		+= src/Character.cpp
+SRC		 = src/Character.cpp
 SRC		+= src/Cure.cpp
 SRC		+= src/Ice.cpp
-SRC		+= src/ICharacter.cpp
-SRC		+= src/IMateriaSource.cpp
 SRC		+= src/main.cpp
 SRC		+= src/MateriaSource.cpp
+SRC		+= src/AMateria.cpp
 
 CXX = c++
-CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+CXXFLAGS = -g -Wall -Werror -Wextra -std=c++98
 VAL = valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
 
 OBJ = $(SRC:.cpp=.o)
