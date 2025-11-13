@@ -28,6 +28,7 @@ void subject()
 	delete src;
 	return ;
 }
+
 void my_test()
 {
 	std::cout << B << "\n	--Starting My Tests--\n" << RST << std::endl;
@@ -53,9 +54,10 @@ void my_test()
 	Tarnished->equip(src->createMateria("cure"));
 	Tarnished->equip(src->createMateria("ice"));
 	Tarnished->equip(src->createMateria("cure"));
-	AMateria *ice = src->createMateria("ice");
 	// This will result in an error and a leak since inv is full.
 	// However because of the subject, I can not handle this leak.
+	//Tarnished->equip(src->createMateria("cure"));
+	AMateria *ice = src->createMateria("ice");
 	Tarnished->equip(ice);
 	delete ice;
 
