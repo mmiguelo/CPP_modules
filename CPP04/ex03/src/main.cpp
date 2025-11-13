@@ -53,10 +53,11 @@ void my_test()
 	Tarnished->equip(src->createMateria("cure"));
 	Tarnished->equip(src->createMateria("ice"));
 	Tarnished->equip(src->createMateria("cure"));
-
+	AMateria *ice = src->createMateria("ice");
 	// This will result in an error and a leak since inv is full.
 	// However because of the subject, I can not handle this leak.
-	//Tarnished->equip(src->createMateria("ice"));
+	Tarnished->equip(ice);
+	delete ice;
 
 	print("Using Materias");
 	Tarnished->use(0, *Cinder);
