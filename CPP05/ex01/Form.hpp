@@ -24,14 +24,14 @@ class Form
 		Form();
 		Form(const std::string &name, int signGrade, int executeGrade);
 		Form(const Form &other);
-		Form &operator=(const Form &other);
+		Form& operator=(const Form &other);
 		~Form();
 
 		const std::string 	&getName() const;
 		int 				getSignGrade() const;
 		int 				getExecuteGrade() const;
 		bool				getSigned() const;
-		void				SetSigned(bool sign);
+		void				setSigned(bool sign);
 		void				beSigned(const class Bureaucrat &b);
 
 		class AlreadySignedException: public std::exception
