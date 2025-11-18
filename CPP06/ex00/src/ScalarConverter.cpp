@@ -17,9 +17,8 @@ ScalarConverter::ScalarConverter(const ScalarConverter &other)
 }
 
 ScalarConverter & ScalarConverter::operator=(const ScalarConverter &other) {
-    if (this != &other) {
-        // copy attributes here
-    }
+    if (this != &other)
+        *this = other;
     std::cout << G << "Copy assignment operator called" << RST << std::endl;
     return *this;
 }
