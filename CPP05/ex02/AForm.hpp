@@ -1,8 +1,9 @@
 #pragma once
+
 #include <iostream>
 #include <string>
 #include <exception>
-#include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 //colors
 #define R		"\033[0;31m" //RED
@@ -11,26 +12,36 @@
 #define B		"\033[0;34m" //BLUE
 #define RST		"\033[0m"   //RESET
 
-class Form;
-
-class Bureaucrat
+class AForm
 {
 	private:
 		const std::string 	_name;
-		int 				_grade;
+		bool				_signed;
+		const int			_signGrade;
+		const int			_executeGrade;
 
 	public:
-		Bureaucrat();
-		Bureaucrat(const std::string &name, int grade);
-		Bureaucrat(const Bureaucrat &other);
-		Bureaucrat &operator=(const Bureaucrat &other);
-		~Bureaucrat();
+		AForm();
+		AForm(const std::string &name, int signGrade, int executeGrade);
+		AForm(const AForm &other);
+		AForm& operator=(const AForm &other);
+		~AForm();
 
 		const std::string 	&getName() const;
-		int 				getGrade() const;
-		void 				incrementGrade();
-		void 				decrementGrade();
-		void				signForm(Form &form);
+		int 				getSignGrade() const;
+		int 				getExecuteGrade() const;
+		bool				getSigned() const;
+		void				setSigned(bool sign);
+		void				beSigned(const class Bureaucrat &b);
+
+		class AlreadySignedException: public std::exception
+		{
+			public:
+				virtual const char *what() const throw()
+				{
+					return "Form is already signed!";
+				}
+		};
 
 		class GradeTooHighException: public std::exception
 		{
@@ -51,4 +62,4 @@ class Bureaucrat
 		};
 };
 
-std::ostream& operator << (std::ostream& output, const Bureaucrat& b);
+std::ostream &operator<<(std::ostream &out, const AForm &form);
