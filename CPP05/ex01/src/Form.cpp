@@ -1,12 +1,12 @@
 #include "../Form.hpp"
 
-Form::Form(): _name("Unkown"), _signed(false), _signGrade(150), _executeGrade(150)
+Form::Form(): _name("Unkown"), _isSigned(false), _signGrade(150), _executeGrade(150)
 {
 	std::cout << G << "Form default constructor called" << RST << std::endl;
 }
 
 Form::Form(const std::string &name, int signGrade, int executeGrade) : _name(name),
-																		_signed(false),
+																		_isSigned(false),
 																		_signGrade(signGrade),
 																		_executeGrade(executeGrade)
 {
@@ -18,7 +18,7 @@ Form::Form(const std::string &name, int signGrade, int executeGrade) : _name(nam
 }
 
 Form::Form(const Form &other) : _name(other._name),
-							_signed(other._signed),
+							_isSigned(other._isSigned),
 							_signGrade(other._signGrade),
 							_executeGrade(other._executeGrade)
 {
@@ -28,7 +28,7 @@ Form::Form(const Form &other) : _name(other._name),
 Form& Form::operator=(const Form &other)
 {
 	if (this != &other)
-		this->_signed = other._signed;
+		this->_isSigned = other._isSigned;
 	return *this;
 	std::cout << G << "Form copy assignment operator called" << RST << std::endl;
 }
@@ -55,17 +55,17 @@ int Form::getExecuteGrade() const
 
 bool Form::getSigned() const
 {
-	return this->_signed;
+	return this->_isSigned;
 }
 
 void Form::setSigned(bool sign)
 {
-	this->_signed = sign;
+	this->_isSigned = sign;
 }
 
 void Form::beSigned(const Bureaucrat &b)
 {
-	if (this->_signed)
+	if (this->_isSigned)
 		throw AlreadySignedException();
 	else if(b.getGrade() > this->_signGrade)
 		throw GradeTooLowException();
