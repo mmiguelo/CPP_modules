@@ -6,7 +6,7 @@
 # /__________)                                        (__________\ 
 
 
-NAME = iter
+NAME = Array
 SRCS_D = src
 INC_D = inc
 
@@ -14,7 +14,7 @@ INC_D = inc
 SRC = $(SRCS_D)/main.cpp \
 
 #include files
-INC = $(INC_D)/iter.hpp \
+INC = $(INC_D)/Array.hpp \
 
 #object files
 OBJ = $(SRC:.cpp=.o)
