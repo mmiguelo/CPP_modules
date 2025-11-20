@@ -28,7 +28,7 @@ class AForm
 		AForm(const std::string &name, int signGrade, int executeGrade);
 		AForm(const AForm &other);
 		AForm& operator=(const AForm &other);
-		~AForm();
+		virtual ~AForm();
 
 		const std::string 	&getName() const;
 		int 				getSignGrade() const;
@@ -37,7 +37,7 @@ class AForm
 		void				setSigned(bool sign);
 		void				beSigned(const class Bureaucrat &b);
 
-		virtual void		execute() const = 0;
+		virtual void execute(Bureaucrat const &executor) const = 0;
 		class AlreadySignedException: public std::exception
 		{
 			public:

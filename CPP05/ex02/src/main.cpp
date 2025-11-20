@@ -32,7 +32,7 @@ int main()
 
 	std::cout << BMAG "	Shrubbery Form Execution\n" RST;
 	try {
-		nor.execute(shrub);
+		nor.executeForm(shrub);
 	} catch (std::exception& error) {
 		std::cout << error.what() << std::endl;
 	}
@@ -98,7 +98,7 @@ int main()
 	}
 	std::cout << std::endl;
 	
-	std::cout << BMAG "	PRSTidential Form Execution\n" RST;
+	std::cout << BMAG "	Presidential Form Execution\n" RST;
 	try {
 		lat.signForm(pardon);
 		lat.executeForm(pardon);

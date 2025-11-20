@@ -39,8 +39,12 @@ std::string RobotomyRequestForm::getTarget() const
 	return this->_target;
 }
 
-void RobotomyRequestForm::execute() const
+void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
+	if (!getSigned())
+		throw AForm::GradeTooLowException();
+	if (executor.getGrade() > getExecuteGrade())
+		throw AForm::GradeTooLowException();
 	std::cout << "Bzzzzzz... Vrrrrrr..." << std::endl;
 	if (std::rand() & 1)
 		std::cout << GRN << this->_target << " has been robotomized successfully." << RST << std::endl;

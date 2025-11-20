@@ -37,8 +37,12 @@ std::string ShrubberyCreationForm::getTarget() const
 	return this->_target;
 }
 
-void ShrubberyCreationForm::execute() const
+void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
+	if (!getSigned())
+		throw AForm::GradeTooLowException();
+	if (executor.getGrade() > getExecuteGrade())
+		throw AForm::GradeTooLowException();
 	std::string fileName = this->_target + "_shrubbery";
 	std::ofstream outfile(fileName.c_str());
 	if (!outfile)

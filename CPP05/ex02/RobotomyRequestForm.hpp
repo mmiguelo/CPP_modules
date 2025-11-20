@@ -2,6 +2,7 @@
 
 #include "AForm.hpp"
 #include <string>
+#include <cstdlib>
 
 #define RED   "\033[0;31m"
 #define GRN   "\033[0;32m"
@@ -24,5 +25,5 @@ public:
 	RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
 
 	std::string getTarget() const;
-	void execute() const;
+	void execute(Bureaucrat const &executor) const;
 };
