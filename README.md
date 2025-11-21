@@ -12,7 +12,7 @@ This repository contains my solutions to the 42 C++ modules (00 to 04). Each fil
 ---
 ## Insert text here<br>
 <details>
-<summary> 📦 Module 00 — Basics & Syntax</summary><br>
+<summary> 📘 Module 00 — Basics & Syntax</summary><br>
 
 | File              | Concept                                                                         |
 |-------------------|---------------------------------------------------------------------------------|
@@ -23,7 +23,7 @@ This repository contains my solutions to the 42 C++ modules (00 to 04). Each fil
 </details>
 
 <details>
-<summary> 🧱 Module 01 — Memory, References, and File I/O</summary><br>
+<summary> 💾 Module 01 — Memory, References & File I/O</summary><br>
 
 | File              | Concept                                          |
 |-------------------|--------------------------------------------------|
@@ -38,7 +38,7 @@ This repository contains my solutions to the 42 C++ modules (00 to 04). Each fil
 </details>
 
 <details>
-<summary> 🧠 Module 02 — OOP and Ad-hoc Polymorphism</summary><br>
+<summary> 🧩 Module 02 — OOP & Ad-hoc Polymorphism</summary><br>
   
 | File                  | Concept                                                           |
 |-----------------------|-------------------------------------------------------------------|
@@ -50,7 +50,7 @@ This repository contains my solutions to the 42 C++ modules (00 to 04). Each fil
 </details>
 
 <details>
-<summary> 📦 Module 03 — Inheritance & Polymorphism</summary><br>
+<summary> 🌿 Module 03 — Inheritance & Polymorphism</summary><br>
   
 | File                    | Concept                                       |
 |-------------------------|-----------------------------------------------|
@@ -62,7 +62,7 @@ This repository contains my solutions to the 42 C++ modules (00 to 04). Each fil
 </details>
 
 <details>
-<summary> 🎯 Module 04 — Abstract Classes & Interfaces</summary><br>
+<summary> 🔌 Module 04 — Abstract Classes & Interfaces</summary><br>
 
 | File                  | Concept                                                   |
 |-----------------------|-----------------------------------------------------------|
@@ -74,19 +74,22 @@ This repository contains my solutions to the 42 C++ modules (00 to 04). Each fil
 </details>
 
 <details>
-<summary> Next Modules Coming Soon (here is a preview)</summary><br>
+<summary> 🔁 Module 05 — Repetition & Exceptions</summary><br>
 
 ## 🛠 Module 05 — Exceptions
-| File               | Concept                                                       |
-|--------------------|---------------------------------------------------------------|
-| ex00               | Bureaucrat class, exceptions, range validation with try/catch |
-| ex01               | Form class, nested exceptions, interaction between classes
-| ex02               | Polymorphic forms, exception hierarchy, execution permissions
-| ex03               | Intern class, factory method pattern, dynamic form creation
+| File | Concepts                                   |
+|------|---------------------------------------------|
+| ex00 | Exceptions, range validation, try/catch |
+| ex01 | Nested exceptions, class interaction |
+| ex02 | Abstract forms, polymorphism, execution rules |
+| ex03 | Factory pattern, dynamic form creation |
 
----
+</details>
 
-## ⚙️ Module 06 — Casting
+<details>
+<summary> Next Modules Coming Soon (here is a preview)</summary><br>
+
+## 🎭 Module 06 — Casting
 | File                  | Concept                                |
 |-----------------------|----------------------------------------|
 | ex00                | Static casting, type conversion between base and derived             |
@@ -95,7 +98,7 @@ This repository contains my solutions to the 42 C++ modules (00 to 04). Each fil
 
 ---
 
-## 🎲 Module 07 — Templates
+## 🧬 Module 07 — Templates
 | File                | Concept                        |
 |---------------------|--------------------------------|
 | ex00                | Function templates, generic programming basics             |
@@ -104,7 +107,7 @@ This repository contains my solutions to the 42 C++ modules (00 to 04). Each fil
 
 ---
 
-## 🧰 Module 08 — Containers & STL
+## 📦 Module 08 — Containers & STL
 | File                | Concept                                  |
 |---------------------|------------------------------------------|
 | ex00                | Templates with custom classes, STL algorithms      |
@@ -113,7 +116,7 @@ This repository contains my solutions to the 42 C++ modules (00 to 04). Each fil
 
 ---
 
-## 📈 Module 09 — MutantStack & Inheritance from STL
+## 📈 Module 09 — MutantStack & STL Inheritance
 | File                | Concept                                   |
 |---------------------|-------------------------------------------|
 | ex00                | Parse files, handle errors, and use std::map for date-based lookups.       |
