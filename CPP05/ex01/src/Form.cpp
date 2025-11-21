@@ -29,8 +29,8 @@ Form& Form::operator=(const Form &other)
 {
 	if (this != &other)
 		this->_isSigned = other._isSigned;
-	return *this;
 	std::cout << G << "Form copy assignment operator called" << RST << std::endl;
+	return *this;
 }
 
 Form::~Form()
