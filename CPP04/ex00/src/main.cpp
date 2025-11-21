@@ -7,10 +7,10 @@
 int main()
 {
     const Animal* meta = new Animal();
-    const Animal* j = new Dog();
+    const Animal* j = new Dog(); //Using a base class pointer ensures proper polymorphic behavior.
     const Animal* i = new Cat();
 	const WrongAnimal* l = new WrongAnimal();
-	const WrongAnimal* k = new WrongCat();
+	const WrongAnimal* k = new WrongCat(); // Will call WrongAnimal::makeSound(), NOT WrongCat
 
 	{
 		std::cout << j->getType() << " " << std::endl;

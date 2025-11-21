@@ -12,6 +12,7 @@ class ICharacter;
 #define B		"\033[0;34m" //BLUE
 #define RST		"\033[0m"   //RESET
 
+// abstract class since there is a purevirtal function
 class AMateria
 {
     protected:
@@ -25,6 +26,9 @@ class AMateria
         AMateria &operator=(const AMateria &other);
 
         std::string const &getType() const; //Returns the materia type
-	    virtual AMateria* clone() const = 0;
+	    //pure virtual function makes this class abstract
+        //Therefore AMateria cannot be instantiated and acts like an interface / base class.
+        //Clone is like a factory — it must return a newly allocated object
+        virtual AMateria* clone() const = 0;
 	    virtual void use(ICharacter &target);
 };

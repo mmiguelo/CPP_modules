@@ -14,6 +14,11 @@
 #define CYAN    "\033[36m"
 #define WHITE   "\033[37m"
 
+/* Deep Copy & Memory:
+
+The subject requires dynamic allocation which means 
+the introduction of the responsability to create and delete the Brain properly. */
+
 int main()
 {
 	// Dog
@@ -83,7 +88,11 @@ int main()
     // Virtual destructors
     {
         std::cout << GREEN << "\n\nAnimal Arrays (5 Dogs + 5 Cats)" << RESET <<  std::endl;
+        /* What is a deep copy?
 
+        It means duplicating the real data, not just copying pointers.
+        Each Dog and Cat must have its own separate Brain, NOT share the same memory. */
+        
         Animal *array[10];
         std::string dogIdea = "Oh, my, God, keep me from goin' lunatic!";
         std::string catIdea = "There's no discharge in the war!";
