@@ -26,7 +26,7 @@ Intern& Intern::operator=(const Intern &other) {
 AForm * Intern::makeForm(std::string formName, std::string formTarget)
 {
     int ID = -1;
-    std::string form[3] = {"shrubbery creation", "robotomy request", "presidential form"};
+    std::string form[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
 
     if (formTarget.empty())
         throw Intern::EmptyTarget();
