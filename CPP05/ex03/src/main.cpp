@@ -21,7 +21,7 @@ int main()
 	try {
 		form1 = newIntern.makeForm("weird name", "target");
 	} catch (std::exception& error) {
-		std::cout << error.what() << std::endl;
+		std::cout << RED << error.what() << RST << std::endl;
 		form1 = NULL;
 	}
 	std::cout << std::endl;
@@ -29,7 +29,7 @@ int main()
     try {
         form5 = newIntern.makeForm("shrubbery creation", "");
     } catch (std::exception& error) {
-        std::cout << error.what() << std::endl; // should print: "Error: Form target cannot be empty"
+        std::cout << RED << error.what() << RST << std::endl;
         form5 = NULL;
     }
     std::cout << std::endl;
@@ -39,7 +39,7 @@ int main()
 		nor.signForm(*form2);
 		nor.executeForm(*form2);
 	} catch (std::exception& error) {
-		std::cout << error.what() << std::endl;
+		std::cout << RED << error.what() << RST << std::endl;
 		form2 = NULL;
 	}
 	std::cout << std::endl;
@@ -49,7 +49,7 @@ int main()
 		nor.signForm(*form3);
 		nor.executeForm(*form3);
 	} catch (std::exception& error) {
-		std::cout << error.what() << std::endl;
+		std::cout << RED << error.what() << RST << std::endl;
 		form3 = NULL;
 	}
 	std::cout << std::endl;
@@ -59,7 +59,7 @@ int main()
 		nor.signForm(*form4);
 		nor.executeForm(*form4);
 	} catch (std::exception& error) {
-		std::cout << error.what() << std::endl;
+		std::cout << RED << error.what() << RST << std::endl;
 		form4 = NULL;
 	}
 	std::cout << std::endl;

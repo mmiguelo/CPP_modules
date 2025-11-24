@@ -39,6 +39,16 @@ class AForm
 		void				beSigned(const class Bureaucrat &b);
 
 		virtual void execute(Bureaucrat const &executor) const = 0;
+
+		class NotSignedException: public std::exception
+		{
+			public:
+    			virtual const char *what() const throw() 
+				{ 
+					return "Form must be signed before execution!";
+				}
+		};
+
 		class AlreadySignedException: public std::exception
 		{
 			public:

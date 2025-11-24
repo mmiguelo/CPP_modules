@@ -14,7 +14,8 @@ Form::Form(const std::string &name, int signGrade, int executeGrade) : _name(nam
 		throw GradeTooHighException();
 	if (signGrade > 150 || executeGrade > 150)
 		throw GradeTooLowException();
-	std::cout << G << "Form parameterized constructor called" << RST << std::endl;
+	std::cout << G << "Form: " << this->_name << " constructor called, with signGrade: " << RST;
+	std::cout << G << this->_signGrade << " and with executeGrade: " << this->_executeGrade << RST << std::endl;
 }
 
 Form::Form(const Form &other) : _name(other._name),

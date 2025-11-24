@@ -54,15 +54,6 @@ class Bureaucrat
 					return "Grade chosen is too low!";
 				}
 		};
-
-		class NotSignedException : public std::exception
-		{
-			public:
-    			virtual const char *what() const throw() 
-				{ 
-					return "Form must be signed before execution!";
-				}
-		};
 };
 
 std::ostream& operator << (std::ostream& output, const Bureaucrat& b);
