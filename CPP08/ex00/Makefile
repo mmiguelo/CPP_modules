@@ -6,7 +6,7 @@
 # /__________)                                        (__________\ 
 
 
-NAME = Array
+NAME = easyfind
 SRCS_D = src
 INC_D = inc
 
@@ -14,7 +14,7 @@ INC_D = inc
 SRC = $(SRCS_D)/main.cpp \
 
 #include files
-INC = $(INC_D)/Array.hpp \
+INC = $(INC_D)/easyfind.hpp \
 
 #object files
 OBJ = $(SRC:.cpp=.o)
