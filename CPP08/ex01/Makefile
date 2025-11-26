@@ -12,9 +12,10 @@ INC_D = inc
 
 #source files
 SRC = $(SRCS_D)/main.cpp \
+	  $(SRCS_D)/span.cpp
 
 #include files
-INC = $(INC_D)/easyfind.hpp \
+INC = $(INC_D)/span.hpp \
 
 #object files
 OBJ = $(SRC:.cpp=.o)

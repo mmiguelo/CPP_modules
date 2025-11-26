@@ -4,6 +4,8 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include <vector>
+#include <algorithm>
 
 #define R		"\033[0;31m" //RED
 #define G		"\033[0;32m" //GREEN
@@ -16,17 +18,19 @@ class span
 	private:
 		unsigned int _N;
 		std::vector<int> storage;
+
 	public:
     	span();
-		Span(unsigned int nbr)
+		span(unsigned int nbr);
 		span(const span &other);
 		~span();
 		span &operator=(const span &other);
 
-		void addRandomNumbers(unsigned int quantity);
-		void addNumber();
-		int shortestSpan();
-		int longestSpan();
+		unsigned int amount();
+		void 	addRandomNumbers(unsigned int quantity);
+		void 	addNumber(unsigned int number);
+		unsigned int 	shortestSpan();
+		unsigned int 	longestSpan();
 
 		class fullException: public std::exception
 		{
@@ -46,13 +50,12 @@ class span
 				}
 		};
 
-		template <typename T> void addNumber(T begin, T end)
+		template <typename T> void addRange(T begin, T end)
 		{
-			unsigned int sizeToAdd = std::distance(begin, end);
-			if(storage.size() + sizeToAdd > _N)
-				throw std::runtime_error "Maximum number reached. Not enough space on span\n";
-			storage.push_back
+			if (std::distance(begin, end) + storage.size() > _N)
+				throw fullException();
+			storage.insert(storage.end(), begin, end);
 		}
 };
 
-#end
+#endif
