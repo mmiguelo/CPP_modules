@@ -10,14 +10,27 @@ int main () {
 	Array<int> array2;
 	std::cout << "Array3: ";
 	Array<int> array3(0);
-	std::cout << "Array2 = Array1: ";
-	array2 = array1;
 
 	std::cout << CYA "\nPrint Array 1" RST << std::endl;
 	for (unsigned int i = 0; i < array1.size(); i++)
 	{
 		std::cout << array1[i] << std::endl;
 	}
+
+	std::cout << CYA "\nPrint Array 2" RST << std::endl;
+	for (unsigned int i = 0; i <= array2.size(); i++)
+	{
+		try {
+        	std::cout << array2[i] << std::endl;
+    	} catch (ArrayNullException& e) {
+        	std::cout << RED << e.what() << RST << std::endl;
+    	} catch (std::exception& error) {
+        	std::cout << error.what() << std::endl;
+   		}
+	}
+
+	std::cout << "\nArray2 = Array1: ";
+	array2 = array1;
 
 	std::cout << CYA "\nPrint Array 2" RST << std::endl;
 	for (unsigned int i = 0; i < array2.size(); i++)
@@ -54,6 +67,10 @@ int main () {
 	std::cout << CYA "\nDeep Copy check (changed array1 value)" RST << std::endl;
 	array1[1] = 1;
 	std::cout << "Value of [1] in Array1: " << array1[1] << std::endl;
+	for (unsigned int i = 0; i < array1.size(); i++)
+	{
+		std::cout << array1[i] << std::endl;
+	}
 	std::cout << "Value of [1] in Array2: " << array2[1] << std::endl;
 
 	std::cout << BMAG "\n----STR ARRAYS----" RST << std::endl;
