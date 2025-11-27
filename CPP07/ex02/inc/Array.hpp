@@ -14,6 +14,15 @@
 #define BYEL  "\033[33;1m"
 #define RST   "\033[0m"
 
+class ArrayNullException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw()
+				{
+					return "Array is empty";
+				}
+		};
+
 template <typename T> class Array
 {
 	private:
@@ -70,12 +79,16 @@ template <typename T> class Array
 		}
 
 		T& operator [] (size_t index) {
+			if (_size == 0)
+				throw ArrayNullException();
 			if (index >= _size)
 				throw std::out_of_range("Index is out of range");
 			return (_array[index]);
 		}
 		
 		const T& operator [] (size_t index) const {
+			if (_size == 0)
+				throw ArrayNullException();
 			if (index >= _size)
 				throw std::out_of_range("Index is out of range");
 			return (_array[index]);
