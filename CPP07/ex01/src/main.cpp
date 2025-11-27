@@ -62,7 +62,7 @@ int main()
 	int 		intArr[] = {1, 2, 3, 4, 5, 6};
 	const int	cIntArr[] = {1, 2, 3};
 	char 		charArr[] = {'a', 'b', 'c'};
-	std::string	strArr[] = {"one", "two", "three", "four"};
+	std::string	strArr[] = {"One", "tWo", "tHrEe", "FoUR"};
 	std::string strArr2[] = {"Hello World", "this is a Test", "cAmEl CaSe", "CPP is fun!"};
 
 	std::cout << BYEL << "\n----TESTS----" << RST << std::endl << std::endl;
@@ -107,7 +107,7 @@ int main()
 	std::cout << CYA "\nPrinting Const Int Array: " RST << std::endl;
 	::iter(cIntArr, 3, print);
 
-	std::cout << CYA "\nPrinting Came Case String Array: " RST << std::endl;
+	std::cout << CYA "\nPrinting Camel Case String Array: " RST << std::endl;
 	std::cout << BMAG "Before:" RST << std::endl;
 	::iter(strArr2, 4, print);
 
