@@ -1,6 +1,8 @@
 #include "BitcoinExchange.hpp"
 
-BitcoinExchange::BitcoinExchange() {}
+BitcoinExchange::BitcoinExchange() {
+	loadData("data.csv");
+}
 
 BitcoinExchange::~BitcoinExchange() {}
 
@@ -17,11 +19,12 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& other) {
 
 // YYYY-MM-DD
 // https://www.ibm.com/docs/en/i/7.4.0?topic=functions-strptime-convert-string-datetime
-bool BitcoinExchange::isValidDate(std::string& date)
+bool BitcoinExchange::isValidDate(const std::string& date)
 {
 	struct tm time;
 	if (!strptime(date.c_str(), "%Y-%m-%d", &time))
 		return false;
+
 	if(date.length() != 10 || date[4] != '-' || date[7] != '-')
 		return false;
 	int year = atoi(date.substr(0, 4).c_str());
@@ -42,17 +45,27 @@ bool BitcoinExchange::isValidDate(std::string& date)
 	return true;
 }
 
-bool BitcoinExchange::isValidValue(const std::string& strValue, float& value)
+double BitcoinExchange::isValidValue(const std::string& strValue)
 {
     std::stringstream ss(strValue);
+	double value;
     ss >> value;
     if (ss.fail() || !ss.eof())
-        return false; // not a valid number
-    if (value < 0.0f)
-        throw std::runtime_error("Error: not a positive number.");
-    if (value > 1000.0f)
-        throw std::runtime_error("Error: too large a number.");
-    return true;
+    {
+		std::cout << "Error: bad input => " << strValue << std::endl;
+		return -1;
+	}
+    if (value < 0.0)
+	{
+        std::cout << "Error: not a positive number." << std::endl;
+		return -1;
+	}
+    else if (value > 1000.0)
+	{
+        std::cout << "Error: too large a number." << std::endl;
+		return -1;
+	}
+    return value;
 }
 
 
@@ -68,47 +81,78 @@ void removeWS(std::string& line)
 }
 
 //https://cplusplus.com/reference/map/map/
-float BitcoinExchange::getExchangeRate(const std::string& date)
+float BitcoinExchange::getExchangeRate(const std::string& date, double value)
 {
 	std::map<std::string, float>::iterator it = date.lower_bound(date);
-	if (it != data.end() && it->first == date)
+	if (it != _data.end() && it->first == date)
 		return it->second;
-	if (it == data.begin())
+	if (it == _data.begin())
 		return 0;
 	--it;
 	return it->second;
 }
 
-void BitcoinExchange::processInput(const std::string& filename)
+void BitcoinExchange::processInput(char const *filename)
 {
-	std::ifstream file(filename.c_str());
+	std::ifstream file(filename);
 	if(!file.is_open())
 		throw couldNotOpenFile();
 
 	std::string line;
+
 	if (!std::getline(file, line) || line != "date | value")
 		throw std::runtime_error("Error: bad header. Should be \"date | value\"");
 
 	while (std::getline(file, line))
 	{
 		removeWS(line);
-		std::istringstream s(line);
+
 		std::string date, strValue;
-		if (std::getline(s, date, '|') && std::getline(s, strValue))
+		std::istringstream ss(line);
+		if (std::getline(ss, date, '|') && std::getline(ss, strValue, '|'))
 		{
 			if(!isValidDate(date))
 			{
 				std::cerr << "Error: bad input => " << date << std::endl;
 				continue;
 			}
-			float value;
-			isValidValue(strValue, value);
-			data[date] = value;
+			double value;
+			value = isValidValue(strValue);
+			if (value == -1)
+				getExchangeRate(date, value);
 		}
 	}
+	file.close();
 }
 
 void BitcoinExchange::loadData(const std::string& filename)
 {
-	
+	std::ifstream file(filename.c_str());
+	if(!file.is_open())
+		throw couldNotOpenFile();
+
+	std::string line;
+
+	//parse header
+	std::getline(file, line);
+	if (line != "date,exchange_rate")
+		throw invalidFormat();
+
+	while (std::getline(file, line))
+	{
+		std::string date, price;
+		std::istringstream data(line);
+		std::getline(data, date, ',');
+		std::getline(data, price, ',');
+
+		if(!isValidDate(date))
+			throw InvalidDateFormat();
+
+		double priceValue;
+		std::istringstream priceStream(price);
+		if(!(priceStream >> priceValue))
+			throw InvalidPriceFormat();
+		_data[date] = priceValue;
+	}
+	file.close();
 }

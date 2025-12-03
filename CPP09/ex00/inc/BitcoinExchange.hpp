@@ -9,21 +9,23 @@
 
 class BitcoinExchange
 {
+	private:
+
+		std::map<std::string, float> _data;
+		void loadData(const std::string& filename);
+		bool isValidDate(const std::string& date);
+		double isValidValue(const std::string& strValue);
+
+		void processInput(char const *filename);
+		
 	public:
+
 		BitcoinExchange();
 		BitcoinExchange(const BitcoinExchange& other);
 		BitcoinExchange& operator=(const BitcoinExchange& other);
 		~BitcoinExchange();
 
-		void loadData(const std::string& filename);
-		void processInput(const std::string& filename);
-
-   	private:
-		std::map<std::string, float> data;
-
-		bool isValidDate(const std::string& date);
-		bool isValidValue(const std::string& strValue, float& value);
-		float getExchangeRate(const std::string& date);
+		float getExchangeRate(const std::string& date, double value);
 
 		class couldNotOpenFile : public std::exception
 		{
@@ -57,7 +59,7 @@ class BitcoinExchange
 			public:
 				virtual const char *what() const throw()
 				{
-					return ("Invalid price format. Expected a number between 0.0 and 1000.0");
+					return ("Invalid price format. Expected a number between 0.00 and 1000.00");
 				}
 		};
 };
