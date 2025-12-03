@@ -5,6 +5,7 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include <ctime>
 
 class BitcoinExchange
 {
@@ -21,7 +22,7 @@ class BitcoinExchange
 		std::map<std::string, float> data;
 
 		bool isValidDate(const std::string& date);
-		bool isValidValue(const std::string& valueStr, float& value);
+		bool isValidValue(const std::string& strValue, float& value);
 		float getExchangeRate(const std::string& date);
 
 		class couldNotOpenFile : public std::exception
