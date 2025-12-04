@@ -1,4 +1,4 @@
-#include "BitcoinExchange.hpp"
+#include "../inc/BitcoinExchange.hpp"
 
 int main(int argc, char** argv)
 {
@@ -7,8 +7,6 @@ int main(int argc, char** argv)
 	try
 	{
 		BitcoinExchange btcExchange;
-
-		btcExchange.loadData("data.csv");
 		btcExchange.processInput(argv[1]);
 	}
 	catch(const std::exception& e)

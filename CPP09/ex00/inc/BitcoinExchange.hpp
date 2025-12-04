@@ -6,6 +6,8 @@
 #include <fstream>
 #include <sstream>
 #include <ctime>
+#include <exception>
+#include <cmath>
 
 class BitcoinExchange
 {
@@ -16,16 +18,15 @@ class BitcoinExchange
 		bool isValidDate(const std::string& date);
 		double isValidValue(const std::string& strValue);
 
-		void processInput(char const *filename);
 		
 	public:
-
+		void processInput(char const *filename);
 		BitcoinExchange();
 		BitcoinExchange(const BitcoinExchange& other);
 		BitcoinExchange& operator=(const BitcoinExchange& other);
 		~BitcoinExchange();
 
-		float getExchangeRate(const std::string& date, double value);
+		float getExchangeRate(const std::string& date);
 
 		class couldNotOpenFile : public std::exception
 		{
