@@ -7,15 +7,16 @@ int main(int argc, char** argv)
 		std::cerr << "Usage: " << argv[0] << " <input>" << std::endl;
 		return 1;
 	}
-	RPN rpn;
 	try
 	{
-		rpn.evaluate(argv[1]);
+		RPN rpn;
+		int result = rpn.evaluate(argv[1]);
+		std::cout << result << std::endl;
 	}
-	catch (const std::exception& e)
+	catch (const std::runtime_error &e)
 	{
 		std::cerr << e.what() << std::endl;
-		return 1;
+        return 1;
 	}
 	return 0;
 }
