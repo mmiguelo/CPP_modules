@@ -1,0 +1,98 @@
+# Implementation checklist — tiny step-by-step (no solution, just what to do)
+
+Follow these **small, detailed steps** in order. Each step is one thing to implement or check.
+
+1. **Program name & CLI**
+
+   * Create executable `PmergeMe`.
+   * `main(int ac, char **av)` reads arguments starting at `av[1]`.
+
+2. **Argument parsing loop**
+
+   * Loop through each `av[i]` (i = 1..ac-1).
+   * Trim or reject empty strings.
+   * Check each char is a digit (no signs, no decimals). If any fail → print `Error` to `std::cerr` and `return 1`.
+
+3. **Convert and validate**
+
+   * Convert token to integer (use `strtol`/`atoi` style safely).
+   * If conversion overflow/underflow or value ≤ 0 → print `Error` and exit.
+   * (Optional) Decide duplicate policy: allow or treat as error. Implement chosen policy consistently.
+
+4. **Store original sequence**
+
+   * Keep a copy of the input order as a simple printable sequence (for the `Before:` line).
+
+5. **Prepare containers**
+
+   * Create two separate containers: `std::vector<int> vec` and `std::deque<int> deq`.
+   * **Do not** reuse the same instance for both timings — you must sort each container independently.
+
+6. **Populate containers**
+
+   * Insert parsed integers into `vec` and `deq`.
+   * NOTE: the time measurement must include this data-management step, so mark where timing starts (see timing step).
+
+7. **Timing setup**
+
+   * Decide a timing method (e.g., `std::clock()`/`gettimeofday()`/`std::chrono`).
+   * For each container do:
+
+     * Start timer **immediately before** building/managing data for that container (so timing covers building + sorting).
+     * Build/copy the input into the container (if you need to recreate container per run).
+     * Call the container-specific sort routine.
+     * Stop timer immediately after sorting completes.
+   * Record elapsed time with enough precision to show differences.
+
+8. **Implement two separate sort functions**
+
+   * `void sortVector(std::vector<int>& v)` — implement merge-insert (Ford–Johnson) for `vector`.
+   * `void sortDeque(std::deque<int>& d)` — implement the same algorithm but adapted to `deque`.
+   * **Important:** do not implement one generic template used for both — create two functions (one per container).
+
+9. **Keep algorithm internals inside sort functions**
+
+   * All Ford–Johnson logic stays inside those functions. `main` should only call them.
+
+10. **Print results**
+
+    * Print `Before:` followed by the **unsorted** sequence (the copy from step 4) to `stdout`.
+    * Print `After:` followed by the **sorted** sequence (from one of the sorted containers) to `stdout`.
+
+      * Ensure formatting matches examples (numbers separated by spaces, newline at end).
+    * Print timing lines:
+
+      * `Time to process a range of N elements with std::vector : X us` (or your chosen format)
+      * `Time to process a range of N elements with std::deque : Y us`
+    * Use the exact container names in the lines so it's clear which time corresponds to which container.
+
+11. **Error handling**
+
+    * On any parsing/validation error: print `Error` to `std::cerr` (exact word) and `return 1`.
+    * If an internal allocation fails or other runtime error occurs, also print `Error` on `stderr`.
+    * Do not throw uncaught exceptions — catch them at `main` and print `Error` if you use them internally.
+
+12. **Performance & limits**
+
+    * Ensure algorithm handles at least 3000 elements without stack overflow or excessive recursion.
+    * If using recursion, confirm recursion depth is safe; otherwise convert to iterative where necessary.
+
+13. **Build & test**
+
+    * Test with small inputs and single element.
+    * Test with `3000` random integers to verify performance and correctness.
+    * Test invalid tokens (`-1`, `abc`, `""`) to verify `Error` behavior.
+
+14. **Edge cases**
+
+    * Zero arguments: do nothing or print `Before:` with nothing — decide and be consistent.
+    * Single element: sorting should leave it unchanged.
+    * Duplicates: ensure chosen policy (allow/reject) is implemented and tested.
+
+15. **Polish**
+
+    * Make sure output lines are in the exact order required.
+    * Ensure time format has enough digits to show differences (microseconds or better).
+    * Keep code readable and split into small functions: `parseArgs`, `validateNumber`, `buildContainer`, `sortVector`, `sortDeque`, `printSequence`, `measureAndRun`.
+
+---

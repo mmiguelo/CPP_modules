@@ -1,4 +1,4 @@
-#include "../PmergeMe.hpp"
+#include "../inc/PmergeMe.hpp"
 
 PmergeMe::PmergeMe()
 {
@@ -17,9 +17,7 @@ PmergeMe::PmergeMe(const PmergeMe &other)
 }
 
 PmergeMe& PmergeMe::operator=(const PmergeMe &other) {
-    if (this != &other) {
-        // copy attributes here
-    }
+    (void)other; 
     std::cout << G << "Copy assignment operator called" << RST << std::endl;
     return *this;
 }

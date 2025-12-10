@@ -6,16 +6,16 @@
 # /__________)                                        (__________\ 
 
 
-NAME = PMergeMe
+NAME = PmergeMe
 SRCS_D = src
 INC_D = inc
 
 #source files
 SRC = $(SRCS_D)/main.cpp \
-	  $(SRCS_D)/PMergeMe.cpp
+	  $(SRCS_D)/PmergeMe.cpp
 
 #include files
-INC = $(INC_D)/RPN.hpp \
+INC = $(INC_D)/PmergeMe.hpp \
 
 #object files
 OBJ = $(SRC:.cpp=.o)

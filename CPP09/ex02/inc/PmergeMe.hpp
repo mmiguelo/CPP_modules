@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <string>
+#include <deque>
+#include <vector>
 
 #define R		"\033[0;31m" //RED
 #define G		"\033[0;32m" //GREEN
@@ -17,6 +19,8 @@ class PmergeMe
 		PmergeMe(const PmergeMe &other); // Copy constructor
 		~PmergeMe();                // Destructor
 		PmergeMe &operator=(const PmergeMe &other); // Copy assignment
+
+	
 };
 
 #endif
