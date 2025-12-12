@@ -19,8 +19,11 @@ class PmergeMe
 		PmergeMe(const PmergeMe &other); // Copy constructor
 		~PmergeMe();                // Destructor
 		PmergeMe &operator=(const PmergeMe &other); // Copy assignment
-
-	
+		void readInput(int ac, char **av);
+	private:
+		std::deque<int> _deque;
+		std::vector<int> _vector;
+		
 };
 
 #endif
