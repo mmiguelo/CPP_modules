@@ -22,47 +22,42 @@ PmergeMe& PmergeMe::operator=(const PmergeMe &other) {
     return *this;
 }
 
+void PmergeMe::error()
+{
+    std::cerr << "Error.\nInvalid Argument." << std::endl;
+}
+
 void    PmergeMe::readInput(int ac, char **av)
 {
-    for (int i = 1; i < ac, i++)
+    for (int i = 1; i < ac; i++)
     {
         std::istringstream iss(av[i]);
         std::string token;
         while (iss >> token)
         {
-            bool isValid = true;
-            if (token.empty)
-                isValid = false;
+            if (token.empty())
+                return(error());
             for (int j = 0; j < token.size(); j++)
             {
                 if (!isdigit(token[j]))
-                {
-                    isValid = false;
-                    break;
-                }
+                    return (error());
             }
-            if (isValid == false)
+            if (token.size() > 10)
+                return (error());
+            int num;
+            std::stringstream ss(token);
+            ss >> num;
+
+            if (ss.fail() || num < 0)
+                return(error());
+            for (size_t i = 0; i < _vector.size(); i++)
             {
-                std::cerr << "Error.\nInvalid argument." << std::endl;
-                return ;
+                if (_vector[i] == num)
+                    return error();
             }
-            try
-            {
-                int num;
-                std::stringstream ss(token);
-                ss >> num;
-                if (ss.fail)
-                {
-                    std::cerr << "Error.\nInvalid argument." << std::endl;
-                    return ;
-                }
-            }
-            _vector.push_back(token);
-            _deque.push_back(token);
-            catch
-            {
-                
-            }
+            _vector.push_back(num);
+            _deque.push_back(num);
         }
     }
+    std::cout << "Congratulations" << std::endl;
 }

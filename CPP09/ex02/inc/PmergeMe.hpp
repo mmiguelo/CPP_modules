@@ -6,6 +6,7 @@
 #include <deque>
 #include <vector>
 
+
 #define R		"\033[0;31m" //RED
 #define G		"\033[0;32m" //GREEN
 #define Y		"\033[0;33m" //YELLOW
@@ -20,10 +21,10 @@ class PmergeMe
 		~PmergeMe();                // Destructor
 		PmergeMe &operator=(const PmergeMe &other); // Copy assignment
 		void readInput(int ac, char **av);
+		void error();
 	private:
 		std::deque<int> _deque;
 		std::vector<int> _vector;
-		
 };
 
 #endif
