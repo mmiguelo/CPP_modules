@@ -38,8 +38,8 @@ Solutions to the **42 School C++ Modules** (00 – 09) — a progressive journey
 This repository contains all **10 C++ modules** from the 42 curriculum. Each module introduces a specific set of C++ concepts, building progressively from basic I/O and memory management to templates, STL containers, and advanced design patterns — all constrained to the **C++98 standard**.
 
 ```
-  Module 00 ─── 01 ─── 02 ─── 03 ─── 04 ─── 05 ─── 06 ─── 07 ─── 08 ─── 09
-  Basics    Memory  Operators Inherit Abstract  Except  Cast  Templates STL  Applied
+  Module 00 ─── 01 ────── 02 ────── 03 ───────── 04 ──────── 05 ────── 06 ─────── 07 ──── 08 ──── 09
+  Basics      Memory  Operators   Inherit     Abstract     Except    Cast   Templates    STL    Applied
 ```
 
 > 📖 Reference: [cplusplus.com/doc/tutorial](https://cplusplus.com/doc/tutorial/)
