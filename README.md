@@ -1,144 +1,229 @@
-# CPP_modules
+<a id="readme-top"></a>
 
-Reading material:
+<div align="center">
 
-```https://cplusplus.com/doc/tutorial/```
+# 📘 C++ Modules
 
+Solutions to the **42 School C++ Modules** (00 – 09) — a progressive journey from basic syntax to advanced templates, STL containers, and design patterns
 
-# 📘 42 C++ Modules
+<br>
 
-This repository contains my solutions to the 42 C++ modules (00 to 04). Each file demonstrates a specific concept or set of concepts from modern C++ (C++98 to C++ canonical form), following the school's progression.
+![42 School](https://img.shields.io/badge/42-School-blue?style=for-the-badge&logo=42&logoColor=white)
+![C++](https://img.shields.io/badge/C++98-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
+![Norminette](https://img.shields.io/badge/Norminette-passing-brightgreen?style=for-the-badge)
 
----
-## Insert text here<br>
-<details>
-<summary> 📘 Module 00 — Basics & Syntax</summary><br>
-
-| File              | Concept                                                                         |
-|-------------------|---------------------------------------------------------------------------------|
-| ex00              | Command-line arguments, basic output                                            |
-| ex01              | Classes, private attributes, basic I/O, std::setw, string truncation            |
-| ex01              | Basic class design, encapsulation, member functions, scope, object lifetime     |
-
-</details>
-
-<details>
-<summary> 💾 Module 01 — Memory, References & File I/O</summary><br>
-
-| File              | Concept                                          |
-|-------------------|--------------------------------------------------|
-| ex00              | Stack vs heap allocation, constructors           |
-| ex01              | Heap allocation, delete                          |
-| ex02              | References vs pointers                           |
-| ex03              | Using references, initializer lists              |
-| ex04              | File reading/writing, string manipulation        |
-| ex05              | Pointers to member functions                     |
-| ex06              | Switch statments                                 |
-
-</details>
-
-<details>
-<summary> 🧩 Module 02 — OOP & Ad-hoc Polymorphism</summary><br>
-  
-| File                  | Concept                                                           |
-|-----------------------|-------------------------------------------------------------------|
-| ex00                  | Orthodox Canonical Form, fixed-point arithmetic                   |
-| ex01                  | Copy constructor, assignment operator                             |
-| ex02                  | Roundf, operator overloading, static polymorphism                 |
-| ex03                  | Inheritance, polymorphism, virtual destructors, dynamic dispatch  |
-
-</details>
-
-<details>
-<summary> 🌿 Module 03 — Inheritance & Polymorphism</summary><br>
-  
-| File                    | Concept                                       |
-|-------------------------|-----------------------------------------------|
-| ex00                    | Orthodox Canonical Form                       |
-| ex01                    | Basic inheritance                             |
-| ex02                    | Derived classes and method specialization     |
-| ex03                    | Multiple inheritance, virtual inheritance     |
-  
-</details>
-
-<details>
-<summary> 🔌 Module 04 — Abstract Classes & Interfaces</summary><br>
-
-| File                  | Concept                                                   |
-|-----------------------|-----------------------------------------------------------|
-| ex00                  | Abstract classes, virtual methods, dynamic polymorphism   |
-| ex01                  | Deep copies, dynamic memory in class members              |
-| ex02                  | Abstract classes, pure virtual functions                  |
-| ex03                  | Interfaces, pure abstract classes                         |
-
-</details>
-
-<details>
-<summary> 🔁 Module 05 — Repetition & Exceptions</summary><br>
-
-## 🛠 Module 05 — Exceptions
-| File | Concepts                                   |
-|------|---------------------------------------------|
-| ex00 | Exceptions, range validation, try/catch |
-| ex01 | Nested exceptions, class interaction |
-| ex02 | Abstract forms, polymorphism, execution rules |
-| ex03 | Factory pattern, dynamic form creation |
-
-</details>
-
-<details>
-<summary> Next Modules Coming Soon (here is a preview)</summary><br>
-
-## 🎭 Module 06 — Casting
-| File                  | Concept                                |
-|-----------------------|----------------------------------------|
-| ex00                | Static casting, type conversion between base and derived             |
-| ex01                | Dynamic casting, runtime type identification (RTTI)                |
-| ex02                | Base class pointer identification using dynamic_cast
+</div>
 
 ---
 
-## 🧬 Module 07 — Templates
-| File                | Concept                        |
-|---------------------|--------------------------------|
-| ex00                | Function templates, generic programming basics             |
-| ex01                | Class templates, template parameters |
-| ex02                | Template specialization, iterators, and generic containers
+### 📑 Table of Contents
+
+- [📌 About](#-about)
+- [📘 Module 00 — Basics & Syntax](#-module-00--basics--syntax)
+- [💾 Module 01 — Memory, References & File I/O](#-module-01--memory-references--file-io)
+- [🧩 Module 02 — Fixed-Point & Operator Overloading](#-module-02--fixed-point--operator-overloading)
+- [🌿 Module 03 — Inheritance](#-module-03--inheritance)
+- [🔌 Module 04 — Abstract Classes & Interfaces](#-module-04--abstract-classes--interfaces)
+- [🛡️ Module 05 — Exceptions](#%EF%B8%8F-module-05--exceptions)
+- [🎭 Module 06 — Casting](#-module-06--casting)
+- [🧬 Module 07 — Templates](#-module-07--templates)
+- [📦 Module 08 — Containers & STL](#-module-08--containers--stl)
+- [📈 Module 09 — STL Applications](#-module-09--stl-applications)
+- [🔧 Build & Run](#-build--run)
 
 ---
 
-## 📦 Module 08 — Containers & STL
-| File                | Concept                                  |
-|---------------------|------------------------------------------|
-| ex00                | Templates with custom classes, STL algorithms      |
-| ex01                | Templated container with iterators, add/shortest/longest span |
-| ex02                | Extend STL containers and make a stack iterable
+### 📌 About
 
----
+This repository contains all **10 C++ modules** from the 42 curriculum. Each module introduces a specific set of C++ concepts, building progressively from basic I/O and memory management to templates, STL containers, and advanced design patterns — all constrained to the **C++98 standard**.
 
-## 📈 Module 09 — MutantStack & STL Inheritance
-| File                | Concept                                   |
-|---------------------|-------------------------------------------|
-| ex00                | Parse files, handle errors, and use std::map for date-based lookups.       |
-| ex01                | Stack operations, expression parsing, and error handling.        |
-| ex02                | Advanced sorting algorithms and performance comparison using STL containers.
-
-</details>
-
----
-
-## 🧪 Tests
-Where applicable, I’ve included test files or sample usage to demonstrate and validate each concept.
-
----
-
-## 🔧 Build & Run
-
-All files can be compiled with a simple `Makefile` or using:
-```bash
-make
 ```
-Or to include memory leak verification use (only in exercises where applicable):
-```bash
-make val
+  Module 00 ─── 01 ─── 02 ─── 03 ─── 04 ─── 05 ─── 06 ─── 07 ─── 08 ─── 09
+  Basics    Memory  Operators Inherit Abstract  Except  Cast  Templates STL  Applied
 ```
+
+> 📖 Reference: [cplusplus.com/doc/tutorial](https://cplusplus.com/doc/tutorial/)
+
+---
+
+### 📘 Module 00 — Basics & Syntax
+
+<details>
+<summary><b>Exercises</b></summary><br>
+
+| Exercise | Concept |
+|:---:|:---|
+| `ex00` | Command-line arguments, basic output (`std::cout`, `std::toupper`) |
+| `ex01` | Classes, private attributes, `std::setw`, string truncation, basic I/O |
+| `ex02` | Object lifetime, scope, member functions, encapsulation |
+
+</details>
+
+---
+
+### 💾 Module 01 — Memory, References & File I/O
+
+<details>
+<summary><b>Exercises</b></summary><br>
+
+| Exercise | Concept |
+|:---:|:---|
+| `ex00` | Stack vs. heap allocation, constructors / destructors |
+| `ex01` | Heap allocation, `new[]` / `delete[]` |
+| `ex02` | References vs. pointers |
+| `ex03` | References in composition, initializer lists |
+| `ex04` | File reading / writing, string replacement |
+| `ex05` | Pointers to member functions |
+| `ex06` | Switch statements, filtering levels |
+
+</details>
+
+---
+
+### 🧩 Module 02 — Fixed-Point & Operator Overloading
+
+<details>
+<summary><b>Exercises</b></summary><br>
+
+| Exercise | Concept |
+|:---:|:---|
+| `ex00` | Orthodox Canonical Form, fixed-point number representation |
+| `ex01` | Copy constructor, assignment operator overload |
+| `ex02` | Arithmetic / comparison / increment operator overloading |
+| `ex03` | Binary Space Partitioning (BSP), point-in-triangle test |
+
+</details>
+
+---
+
+### 🌿 Module 03 — Inheritance
+
+<details>
+<summary><b>Exercises</b></summary><br>
+
+| Exercise | Concept |
+|:---:|:---|
+| `ex00` | Orthodox Canonical Form — `ClapTrap` base class |
+| `ex01` | Single inheritance — `ScavTrap` extends `ClapTrap` |
+| `ex02` | Multi-level inheritance — `FragTrap` |
+| `ex03` | Diamond inheritance, virtual base classes — `DiamondTrap` |
+
+</details>
+
+---
+
+### 🔌 Module 04 — Abstract Classes & Interfaces
+
+<details>
+<summary><b>Exercises</b></summary><br>
+
+| Exercise | Concept |
+|:---:|:---|
+| `ex00` | Virtual methods, dynamic polymorphism (`Animal` → `Dog` / `Cat`) |
+| `ex01` | Deep copy with dynamically allocated members (`Brain`) |
+| `ex02` | Pure virtual functions, abstract base class (`AAnimal`) |
+| `ex03` | Interfaces (`ICharacter`, `IMateriaSource`), pure abstract classes |
+
+</details>
+
+---
+
+### 🛡️ Module 05 — Exceptions
+
+<details>
+<summary><b>Exercises</b></summary><br>
+
+| Exercise | Concept |
+|:---:|:---|
+| `ex00` | Custom exceptions, grade range validation, `try` / `catch` |
+| `ex01` | Nested exceptions, `Form` signing with grade checks |
+| `ex02` | Abstract `AForm`, concrete forms (`ShrubberyCreation`, `RobotomyRequest`, `PresidentialPardon`) |
+| `ex03` | Factory pattern — `Intern` dynamically creates forms |
+
+</details>
+
+---
+
+### 🎭 Module 06 — Casting
+
+<details>
+<summary><b>Exercises</b></summary><br>
+
+| Exercise | Concept |
+|:---:|:---|
+| `ex00` | `static_cast` — scalar type conversion (`char`, `int`, `float`, `double`) |
+| `ex01` | `reinterpret_cast` — serialization / deserialization of pointers |
+| `ex02` | `dynamic_cast` — runtime type identification (RTTI) |
+
+</details>
+
+---
+
+### 🧬 Module 07 — Templates
+
+<details>
+<summary><b>Exercises</b></summary><br>
+
+| Exercise | Concept |
+|:---:|:---|
+| `ex00` | Function templates (`swap`, `min`, `max`) |
+| `ex01` | `iter` — function template applied to arrays |
+| `ex02` | Class template — generic `Array<T>` with bounds checking |
+
+</details>
+
+---
+
+### 📦 Module 08 — Containers & STL
+
+<details>
+<summary><b>Exercises</b></summary><br>
+
+| Exercise | Concept |
+|:---:|:---|
+| `ex00` | `easyfind` — templated search in STL containers |
+| `ex01` | `Span` — container with shortest / longest span algorithms |
+| `ex02` | `MutantStack` — extend `std::stack` to be iterable |
+
+</details>
+
+---
+
+### 📈 Module 09 — STL Applications
+
+<details>
+<summary><b>Exercises</b></summary><br>
+
+| Exercise | Concept |
+|:---:|:---|
+| `ex00` | Bitcoin exchange — date-based CSV parsing with `std::map` |
+| `ex01` | Reverse Polish Notation — stack-based expression evaluation |
+| `ex02` | `PmergeMe` — Ford-Johnson merge-insert sort, performance comparison across containers |
+
+</details>
+
+---
+
+### 🔧 Build & Run
+
+Each exercise has its own `Makefile`. From any exercise directory:
+
+```bash
+make                # Compile
+./executable_name   # Run
+make val            # Run with Valgrind (where applicable)
+make re             # Full recompile
+make fclean         # Clean all
+```
+
+---
+
+<div align="center">
+
+### 👤 Author
+
+[![mmiguelo](https://img.shields.io/badge/mmiguelo-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mmiguelo)
+
+</div>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
