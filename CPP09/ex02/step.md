@@ -2,38 +2,38 @@
 
 Follow these **small, detailed steps** in order. Each step is one thing to implement or check.
 
-1. **Program name & CLI**
+1. **Program name & CLI** ✅
 
    * Create executable `PmergeMe`.
    * `main(int ac, char **av)` reads arguments starting at `av[1]`.
 
-2. **Argument parsing loop**
+2. **Argument parsing loop** ✅
 
    * Loop through each `av[i]` (i = 1..ac-1).
    * Trim or reject empty strings.
    * Check each char is a digit (no signs, no decimals). If any fail → print `Error` to `std::cerr` and `return 1`.
 
-3. **Convert and validate**
+3. **Convert and validate** ✅
 
    * Convert token to integer (use `strtol`/`atoi` style safely).
    * If conversion overflow/underflow or value ≤ 0 → print `Error` and exit.
    * (Optional) Decide duplicate policy: allow or treat as error. Implement chosen policy consistently.
 
-4. **Store original sequence**
+4. **Store original sequence** ✅
 
    * Keep a copy of the input order as a simple printable sequence (for the `Before:` line).
 
-5. **Prepare containers**
+5. **Prepare containers** ✅
 
    * Create two separate containers: `std::vector<int> vec` and `std::deque<int> deq`.
    * **Do not** reuse the same instance for both timings — you must sort each container independently.
 
-6. **Populate containers**
+6. **Populate containers** ✅
 
    * Insert parsed integers into `vec` and `deq`.
    * NOTE: the time measurement must include this data-management step, so mark where timing starts (see timing step).
 
-7. **Timing setup**
+7. **Timing setup** ✅
 
    * Decide a timing method (e.g., `std::clock()`/`gettimeofday()`/`std::chrono`).
    * For each container do:

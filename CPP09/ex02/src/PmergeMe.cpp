@@ -1,24 +1,20 @@
 #include "../inc/PmergeMe.hpp"
 
-PmergeMe::PmergeMe()
-{
-	std::cout << G << "PmergeMe: default constructor called" << RST << std::endl;
-}
+PmergeMe::PmergeMe(){}
 
-PmergeMe::~PmergeMe()
-{
-	std::cout << R << "PmergeMe: destructor called" << RST << std::endl;
-}
+PmergeMe::~PmergeMe(){}
 
-PmergeMe::PmergeMe(const PmergeMe &other)
-{
-    *this = other;
-    std::cout << G << "PmergeMe: Copy constructor called." << RST << std::endl;
+PmergeMe::PmergeMe(const PmergeMe &other) {
+    if (this != &other)
+        *this = other;
 }
 
 PmergeMe& PmergeMe::operator=(const PmergeMe &other) {
-    (void)other; 
-    std::cout << G << "Copy assignment operator called" << RST << std::endl;
+    if (this != &other) {
+        _before = other._before;
+        _deque = other._deque;
+        _vector = other._vector;
+    }
     return *this;
 }
 
@@ -27,7 +23,7 @@ void PmergeMe::error()
     std::cerr << "Error.\nInvalid Argument." << std::endl;
 }
 
-void    PmergeMe::readInput(int ac, char **av)
+void    PmergeMe::insertAndValidate(int ac, char **av)
 {
     for (int i = 1; i < ac; i++)
     {
@@ -37,7 +33,7 @@ void    PmergeMe::readInput(int ac, char **av)
         {
             if (token.empty())
                 return(error());
-            for (int j = 0; j < token.size(); j++)
+            for (unsigned long j = 0; j < token.size(); j++)
             {
                 if (!isdigit(token[j]))
                     return (error());
@@ -55,9 +51,7 @@ void    PmergeMe::readInput(int ac, char **av)
                 if (_vector[i] == num)
                     return error();
             }
-            _vector.push_back(num);
-            _deque.push_back(num);
+            _before.push_back(num);
         }
     }
-    std::cout << "Congratulations" << std::endl;
 }

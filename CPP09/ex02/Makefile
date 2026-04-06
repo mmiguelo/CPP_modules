@@ -7,32 +7,32 @@
 
 
 NAME = PmergeMe
-SRCS_D = src
-INC_D = inc
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+GDB = -g
+RM = rm -f
+INCLUDES = -I./inc
+VAL = valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
 
 #source files
-SRC = $(SRCS_D)/main.cpp \
-	  $(SRCS_D)/PmergeMe.cpp
+SRC_DIR = src
+OBJ_DIR = obj
 
-#include files
-INC = $(INC_D)/PmergeMe.hpp \
 
-#object files
-OBJ = $(SRC:.cpp=.o)
 
 #		   ________________________________________________
 #  _______|                                               |_______
-# \       |                FLAGS & COMMANDS               |      /
+# \       |                		SOURCES        		      |      /
 #  \      |                                               |     /
 #  /      |_______________________________________________|     \ 
 # /__________)                                        (__________\ 
 
 
-COMP = c++
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -g
-GDB = -g
-RM = rm -f
-VAL = valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
+SRC = main.cpp
+SRC += PmergeMe.cpp
+SRC += utils.cpp
+
+OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
 
 #          ________________________________________________
 # ________|                                               |_______
@@ -43,13 +43,16 @@ VAL = valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
 
 all: $(NAME) 
 
-$(NAME): $(OBJ) $(INC)
-	$(COMP) $(CPPFLAGS) $(OBJ) -I $(INC_D) -o $(NAME)
+$(NAME): $(OBJ)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 	@echo $(BGRN)"✨Compilation completed✨"$(RST)
 
-%.o: %.cpp
-	@$(COMP) $(CPPFLAGS) -I $(INC_D) -c $< -o $@
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
+	@$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 	@echo $(BMAG)"Compiling..."$(RST)
+
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
 
 val: all
 	@$(VAL) ./$(NAME)
@@ -69,10 +72,12 @@ clean:
 #clean and remove
 fclean: clean
 	@$(RM) $(NAME)
+	@$(RM) -rf $(OBJ_DIR)
 	@echo $(BMAG)"✨Program removed" $(BGRN)"successfully✨"$(RST)
 
 #remake
 re: fclean all
+	@$(RM) -rf $(OBJ_DIR)
 	@echo $(BMAG)"✨Re-compile was" $(BGRN)"successfull✨"$(RST)
 
 #          ________________________________________________
