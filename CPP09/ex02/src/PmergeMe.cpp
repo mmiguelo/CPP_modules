@@ -5,8 +5,7 @@ PmergeMe::PmergeMe(){}
 PmergeMe::~PmergeMe(){}
 
 PmergeMe::PmergeMe(const PmergeMe &other) {
-    if (this != &other)
-        *this = other;
+    *this = other;
 }
 
 PmergeMe& PmergeMe::operator=(const PmergeMe &other) {
@@ -33,7 +32,7 @@ void    PmergeMe::insertAndValidate(int ac, char **av)
         {
             if (token.empty())
                 return(error());
-            for (unsigned long j = 0; j < token.size(); j++)
+            for (size_t j = 0; j < token.size(); j++)
             {
                 if (!isdigit(token[j]))
                     return (error());
@@ -46,9 +45,9 @@ void    PmergeMe::insertAndValidate(int ac, char **av)
 
             if (ss.fail() || num < 0)
                 return(error());
-            for (size_t i = 0; i < _vector.size(); i++)
+            for (size_t k = 0; k < _before.size(); k++)
             {
-                if (_vector[i] == num)
+                if (_before[k] == num)
                     return error();
             }
             _before.push_back(num);
