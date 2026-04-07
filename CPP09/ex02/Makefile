@@ -19,10 +19,9 @@ SRC_DIR = src
 OBJ_DIR = obj
 
 
-
 #		   ________________________________________________
 #  _______|                                               |_______
-# \       |                		SOURCES        		      |      /
+# \       |                   SOURCES                     |      /
 #  \      |                                               |     /
 #  /      |_______________________________________________|     \ 
 # /__________)                                        (__________\ 
@@ -34,17 +33,19 @@ SRC += utils.cpp
 
 OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.cpp=.o))
 
+
 #          ________________________________________________
 # ________|                                               |_______
-# \       |                    LIB RULES                  |      /
+# \       |                  BUILD RULES                  |      /
 #  \      |                                               |     /
 #  /      |_______________________________________________|     \ 
 # /__________)                                        (__________\ 
 
+
 all: $(NAME) 
 
 $(NAME): $(OBJ)
-	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
+	@ $(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 	@echo $(BGRN)"✨Compilation completed✨"$(RST)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
@@ -57,12 +58,14 @@ $(OBJ_DIR):
 val: all
 	@$(VAL) ./$(NAME)
 
+
 #          ________________________________________________
 # ________|                                               |_______
 # \       |                  CLEAN RULES                  |      /
 #  \      |                                               |     /
 #  /      |_______________________________________________|     \ 
 # /__________)                                        (__________\ 
+
 
 #remove .o
 clean:
@@ -77,18 +80,11 @@ fclean: clean
 
 #remake
 re: fclean all
-	@$(RM) -rf $(OBJ_DIR)
-	@echo $(BMAG)"✨Re-compile was" $(BGRN)"successfull✨"$(RST)
-
-#          ________________________________________________
-# ________|                                               |_______
-# \       |                  HELP RULES                   |      /
-#  \      |                                               |     /
-#  /      |_______________________________________________|     \ 
-# /__________)                                        (__________\ 
+	@echo $(BMAG)"✨Re-compile was" $(BGRN)"successful✨"$(RST)
 
 #Phony targets to avoid clashes
 .PHONY: all clean fclean re
+
 
 #          ________________________________________________
 # ________|                                               |_______
@@ -96,6 +92,7 @@ re: fclean all
 #  \      |                                               |     /
 #  /      |_______________________________________________|     \ 
 # /__________)                                        (__________\ 
+
 
 #color list for foreground
 #bash -c 'for c in {0..255}; do tput setaf $c; tput setaf $c | cat -v; echo =$c; done'
